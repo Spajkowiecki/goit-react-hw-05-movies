@@ -1,12 +1,27 @@
-@import-normalize; /* bring in normalize.css styles */
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 200 to 800 */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+p,
+span,
+li {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: #1d1e29;
+  color: white;
+  font-weight: 100;
 }
 
 code {

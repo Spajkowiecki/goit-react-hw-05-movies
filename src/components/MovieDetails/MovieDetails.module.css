@@ -1,0 +1,75 @@
+.container {
+  margin: 20px;
+  padding: 20px;
+
+  height: calc(100vh - 160px);
+
+  background-color: rgba(136, 136, 136, 0.177);
+  border-radius: 30px;
+}
+
+.movieDetails {
+  display: flex;
+}
+
+.textDetails {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.movieHeader {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.movieHeader h2 {
+  margin: 0px;
+}
+
+.genres {
+  margin-top: 10px;
+
+  display: flex;
+  gap: 10px;
+
+  color: rgb(138, 230, 255);
+  font-weight: 700;
+}
+
+.additionalInfos {
+  list-style: none;
+  padding: 0px;
+}
+
+.additionalInfos {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.additionalNav {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+}
+
+.additionalNav a {
+  color: rgb(138, 230, 255);
+  font-weight: 700;
+}
+
+.additionalInfos strong {
+  font-size: 18px;
+  color: rgb(160, 160, 160);
+  text-decoration: underline 1px solid white;
+}
+
+.outlet {
+  margin-top: 30px;
+  height: 370px;
+  overflow-y: auto;
+}

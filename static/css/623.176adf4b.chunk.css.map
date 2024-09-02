@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/623.176adf4b.chunk.css","mappings":"AAAA,wBACE,eACF","sources":["components/Reviews/Reviews.module.css"],"sourcesContent":[".reviews {\n  overflow-y: auto;\n}\n"],"names":[],"sourceRoot":""}

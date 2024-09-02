@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import MovieDetails from './MovieDetails/MovieDetails';
 import Heading from './Heading/Heading';
-import Home from './Home/Home';
-import Reviews from './Reviews/Reviews';
-import Movies from './Movies/Movies';
+import { lazy } from 'react';
+
+const Home = lazy(() => import('./Home/Home'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const Movies = lazy(() => import('./Movies/Movies'));
+const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
 
 const Cast = () => {
   return <p>CAST!</p>;

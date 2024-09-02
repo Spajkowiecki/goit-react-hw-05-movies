@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import styles from './Movies.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Movies() {
+  const location = useLocation();
+  const prev = location.pathname + location.search;
+
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
@@ -36,7 +39,9 @@ export default function Movies() {
         <ul className={styles.movies}>
           {movies.map(movie => (
             <li className={styles.movie}>
-              <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+              <Link state={{ prev }} to={`/movies/${movie.id}`}>
+                {movie.title}
+              </Link>
             </li>
           ))}
         </ul>

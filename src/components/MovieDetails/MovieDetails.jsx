@@ -5,7 +5,6 @@ import {
   NavLink,
   Outlet,
   useLocation,
-  useNavigate,
   useParams,
 } from 'react-router-dom';
 
@@ -13,7 +12,6 @@ import styles from './MovieDetails.module.css';
 
 export default function MovieDetails() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});

@@ -23,14 +23,18 @@ export default function Reviews() {
 
   return (
     <div className={styles.reviews}>
-      {reviews?.map(rev => (
-        <SingleReview
-          key={rev.id}
-          username={rev.author}
-          review={rev.content}
-          creationData={rev.created_at}
-        />
-      ))}
+      {reviews?.length <= 0 ? (
+        <p>there's no reviews actually</p>
+      ) : (
+        reviews?.map(rev => (
+          <SingleReview
+            key={rev.id}
+            username={rev.author}
+            review={rev.content}
+            creationData={rev.created_at}
+          />
+        ))
+      )}
     </div>
   );
 }

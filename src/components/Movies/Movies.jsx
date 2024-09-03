@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import styles from './Movies.module.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 export default function Movies() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-  const prev = location.pathname + location.search;
+  const prevPage = location.pathname + location.search;
 
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(searchParams.get('query') || '');
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -25,7 +26,9 @@ export default function Movies() {
     e.preventDefault();
     const form = e.currentTarget;
     const search = form.elements.search.value;
-
+    setSearchParams({
+      query: search,
+    });
     setQuery(search);
   };
 
@@ -38,8 +41,8 @@ export default function Movies() {
       <div>
         <ul className={styles.movies}>
           {movies.map(movie => (
-            <li className={styles.movie}>
-              <Link state={{ prev }} to={`/movies/${movie.id}`}>
+            <li key={movie.id} className={styles.movie}>
+              <Link state={{ prevPage }} to={`/movies/${movie.id}`}>
                 {movie.title}
               </Link>
             </li>

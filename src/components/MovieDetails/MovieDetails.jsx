@@ -5,6 +5,7 @@ import {
   NavLink,
   Outlet,
   useLocation,
+  useNavigate,
   useParams,
 } from 'react-router-dom';
 
@@ -12,7 +13,8 @@ import styles from './MovieDetails.module.css';
 
 export default function MovieDetails() {
   const location = useLocation();
-  console.log(location);
+  const navigate = useNavigate();
+
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
   const [images, setImages] = useState({});
@@ -55,7 +57,7 @@ export default function MovieDetails() {
         </div>
         <div className={styles.textDetails}>
           <div className={styles.movieHeader}>
-            <Link to={location.state}>Back</Link>
+            <Link to={location.state?.prevPage || '/'}>Go back</Link>
             <h2 className={styles.movieTitle}>{movie.title}</h2>
             <div className={styles.genres}>
               {movie.genres?.map(genre => (

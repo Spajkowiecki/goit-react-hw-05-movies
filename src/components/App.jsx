@@ -1,15 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Heading from './Heading/Heading';
 import { lazy } from 'react';
+import Cast from './Cast/Cast';
 
 const Home = lazy(() => import('./Home/Home'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 const Movies = lazy(() => import('./Movies/Movies'));
 const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
-
-const Cast = () => {
-  return <p>CAST!</p>;
-};
 
 export default function App() {
   return (
